@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+body {
+    font: 15px / 1.5 Arial, Helvetica, sans-serif;
+    background: linear-gradient(to top, #d4d4d4, #f4f4f4);
+    background-repeat: no-repeat;
+    }
+
+/* GRID CONTAINER RULES */
+.container {
+    height: auto;
+    width: auto;
+    display: grid;
+    margin: auto;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 100%;
+    }
+
+/* HEADER GRID RULES */
+header {
+    display: grid;
+    grid-area: header;
+    grid-template: 1fr / 1fr 1fr;
+    grid-template-areas:
+    "brand login";
+    background: linear-gradient(to top, #262626, #3f3f3f);
+
+    box-shadow: 4px 4px 5px grey;
+}
+
+/* BRAND RULES */
+.brand {
+    grid-area: brand;
+    float: left;
+    }
+
+.brand h1 {
+    font-size: 50px;
+    font-family: Lobster, cursive;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+    }
+
+.brand h1 span.color {
+    color: #ff8300;
+    }
+
+/* LOGIN RULES */
+#login {
+    display: grid;
+    grid-area: login;
+    grid-template: 1fr 1fr / 100%;
+    grid-template-areas:
+    "form"
+    "error";
+    margin: 30px 10px 0px 0px;
+}
+
+#login form {
+    margin: 30px 0px 0px 50px;
+    color: white;
+    grid-area: form;
+    clear: right;
+    }
+
+#loginError {
+    color: #ff3d3d;
+    margin: 0 0 0 50px;
+    grid-area: error;
+    }
+
+/* BUTTON RULES */
+input.button1 {
+    background: linear-gradient(to top, #ff8300, #ff8f3f);
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    font-size: 15px;
+    box-shadow: 1px 1px 5px grey;
+}
+
+input.button1:hover {
+    background: linear-gradient(to top, #ff982b, #ffa342);
+}
+
+/* MAIN GRID RULES */
+.main {
+    display: grid;
+    grid-area: main;
+    grid-template: 1fr 4fr 1fr / 1fr 2fr 1fr 2fr 1fr;
+    grid-template-areas:
+    "tws tws tws tws tws"
+    "lws info mws reg rws";
+    "bws bws bws bws bws"
+    }
+
+/* INFO GRID RULES */
+section.info {
+    grid-area: info;
+    line-height: 300%;
+    }
+
+section.info h3, section.info h4 {
+    line-height: 130%;
+    margin: 15px 0px 15px 0px;
+    }
+
+section.info ul {
+    line-height: 200%;
+    }
+
+/* REGISTER GRID RULES */
+section.register {
+    grid-area: reg;
+    }
+
+section.register h1 {
+    font-size: 2em;
+    }
+
+section.register h4 {
+    margin: 15px 0px 15px 0px;
+    }
+
+/* REGISTER FORM RULES */
+section.register form {
+    display: grid;
+    height: 70%;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr;
+    grid-template-areas:
+    "first_name last_name"
+    "username username"
+    "password password"
+    "button error";
+    grid-gap: 10px;
+    }
+
+section.register form input {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    }
+
+#fn {
+    grid-area: first_name;
+    }
+
+#ln {
+    grid-area: last_name;
+    }
+
+#un {
+    grid-area: username;
+    }
+
+#pw {
+    grid-area: password;
+    }
+
+#rb {
+    grid-area: button;
+    height: 80%;
+    width: 60%;
+    }
+
+#registerError {
+    grid-area: error;
+    color: #ff3d3d;
+    }
+/* FOOTER GRID RULES */
+footer {
+    grid-area: footer;
+    border-top: 1px solid grey;
+    background: linear-gradient(to top, #969696, #b6b6b6);
+    text-align: center;
+    }

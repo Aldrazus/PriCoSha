@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PriCoSha | Login or Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="../static/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div class="brand">
+                <h1><span class="color">P</span>ri<span class="color">C</span>o<span class="color">S</span>ha</h1>
+            </div>
+            <div id="login">
+                <form action="/loginAuth" method="POST">
+                    Username: <input type="text" name="username" required>
+                    Password: <input type="password" name="password" required>
+                    <input class="button1" type="submit" name="submit" value="Log In">
+                </form>
+                <div id="loginError">
+                    {% if loginError %}
+                    <h5>{{ loginError }}</h5>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <section class="main">
+                <!-- SITE INFO -->
+            <section class="info">
+                <h2>Stay connected with your friends on PriCoSha.</h2>
+                <h3>We offer many cool new features!</h3>
+                <h4>On PriCoSha, you can: </h4>
+                <ul>
+                    <li>Add friends to FriendGroups.</li>
+                    <li>Share content with others.</li>
+                    <li>Post stuff and tag your friends.</li>
+                    <li>And much more!</li>
+                </ul>
+            </section>
+
+            <!-- REGISTER FORM -->
+            <section class="register">
+                <h1>Sign Up!</h1>
+                <h4>You're just a few steps away from being connected with the world.</h4>
+                <form action="/registerAuth" method="POST">
+                    <input id='fn' type="text" name="first_name" placeholder="First Name" required>
+                    <input id='ln' type="text" name="last_name" placeholder="Last Name" required>
+                    <br>
+                    <input id='un' type="text" name="username" placeholder="Username" required>
+                    <br>
+                    <input id='pw' type="password" name="password" placeholder="Password" required>
+                    <br>
+                    <input id='rb' class="button1" type="submit" name="submit" value="Register" required>
+                </form>
+                <div id="registerError">
+                    {% if registerError %}
+                    <h5>{{ registerError }}</h5>
+                    {% endif %}
+                </div>
+            </section>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <h5>PriCoSha Project by Alberto Espinal</h5>
+        </footer>
+    </div>
+
+
+</body>
+</html>
