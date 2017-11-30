@@ -12,16 +12,13 @@ conn = pymysql.connect(host='localhost',
                        cursorclass=pymysql.cursors.DictCursor)
 
 def hashPassword(password):
-    """CONVERT PASSWORD AND SALT TO BITS
-       ENCRYPT BIT PASSWORD WITH SHA256
-       ':' + SALT ADDED TO SPLIT LATER
-       WHEN CHECKING"""
+    #CONVERT PASSWORD TO BITS AND ENCRYPT WITH SHA256
     hashedPass = hashlib.sha256(password.encode()).hexdigest()
     return hashedPass
 
 
 def checkPassword(userPassword, hashedPassword):
-    #CHECK IF HASHED USERPASSWORD = HASHEDPASSWORD (NO SALT
+    #CHECK IF HASHED USERPASSWORD = HASHEDPASSWORD (NO SALT)
     hashedUserPass = hashlib.sha256(userPassword.encode()).hexdigest()
     return hashedPassword == hashedUserPass
 
